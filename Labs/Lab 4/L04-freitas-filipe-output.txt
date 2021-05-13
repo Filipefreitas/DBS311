@@ -1,0 +1,63 @@
+
+CITY                                              
+--------------------------------------------------
+Bern
+Geneva
+Hiroshima
+London
+Munich
+Oxford
+Roma
+Sao Paulo
+Singapore
+Stretford
+Tokyo
+Utrecht
+Venice
+Whitehorse
+
+14 rows selected. 
+
+
+                                                                                                                                                                                              CATEGORY_ID CATEGORY_NAME                                          COUNT(P.PRODUCT_ID)
+------------------------------------------------------------------ -------------------
+          5 Storage                                                                                                                                                                                                                                              		   108
+          1 CPU                                                                                                                                                                                                                                                                   70
+          2 Video Card                                                                                                                                                                                                                                                            50
+
+
+PRODUCT_ID
+----------
+        17
+        18
+        19
+        20
+        21
+        47
+       101
+
+7 rows selected. 
+
+
+WAREHOUSE_NAME                                                     STATE                                                                                                                     ------------------------------------------------------------------ --------------------------------------------------
+Beijing                                                                                                                                                                                                                                                                                                           
+Bombay                                                                                                                                                                                                                                                          Maharashtra                                       
+Mexico City                                                                                                                                                                                                                                                     Distrito Federal,                                 
+New Jersey                                                                                                                                                                                                                                                      New Jersey                                        
+San Francisco                                                                                                                                                                                                                                                   California                                        
+Seattle, Washington                                                                                                                                                                                                                                             Washington                                        
+Southlake, Texas                                                                                                                                                                                                                                                Texas                                             
+Sydney                                                                                                                                                                                                                                                          New South Wales                                   
+Toronto                                                                                                                                                                                                                                                         Ontario                                           
+                                                                                                                                                                                                                                                                BE                                                
+                                                                                                                                                                                                                                                                Bavaria                                           
+                                                                                                                                                                                                                                                                Geneve                                            
+                                                                                                                                                                                                                                                                Manchester                                        
+                                                                                                                                                                                                                                                                Oxford                                            
+                                                                                                                                                                                                                                                                Sao Paulo                                         
+                                                                                                                                                                                                                                                                Tokyo Prefecture                                  
+                                                                                                                                                                                                                                                                Utrecht                                           
+                                                                                                                                                                                                                                                                Yukon                                             
+                                                                                                                                                                                                                                                                                                                  
+
+19 rows selected. 

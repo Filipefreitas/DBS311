@@ -1,0 +1,39 @@
+-- Q1 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "price" : 12 }                 
+{ "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "price" : 12 }               
+{ "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "price" : 12.5 } 
+{ "_id" : ObjectId("507d95d5719dbef170f15bf9"), "name" : "AC3 Series Charger", "price" : 19 }           
+{ "_id" : ObjectId("507d95d5719dbef170f15bfe"), "name" : "Phone Service Basic Plan" }                   
+{ "_id" : ObjectId("507d95d5719dbef170f15c01"), "name" : "Cable TV Basic Service Package" }             
+{ "_id" : ObjectId("507d95d5719dbef170f15c00"), "name" : "Phone Service Family Plan" }                  
+{ "_id" : ObjectId("507d95d5719dbef170f15bff"), "name" : "Phone Service Core Plan" }                    
+{ "_id" : ObjectId("507d95d5719dbef170f15bfb"), "name" : "Phone Extended Warranty", "price" : 38 }      
+{ "_id" : "ac7", "name" : "AC7 Phone", "price" : 320 }                                                  
+{ "_id" : "ac3", "name" : "AC3 Phone", "price" : 200 }         
+
+-- Q2 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "price" : 12 }                 
+{ "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "price" : 12 }               
+{ "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "price" : 12.5 }             
+{ "_id" : ObjectId("507d95d5719dbef170f15bf9"), "name" : "AC3 Series Charger", "price" : 19 }
+
+-- Q3 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "price" : 12 }                 
+{ "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "price" : 12 }               
+{ "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "price" : 12.5 }             
+{ "_id" : ObjectId("507d95d5719dbef170f15bf9"), "name" : "AC3 Series Charger", "price" : 19 }  
+
+-- Q4 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfe"), "name" : "Phone Service Basic Plan", "type" : "service" }
+{ "_id" : ObjectId("507d95d5719dbef170f15c01"), "name" : "Cable TV Basic Service Package", "type" : "tv" }                                                                                    
+{ "_id" : ObjectId("507d95d5719dbef170f15c00"), "name" : "Phone Service Family Plan", "type" : "service" }                                                                                    { "_id" : ObjectId("507d95d5719dbef170f15bff"), "name" : "Phone Service Core Plan", "type" : "service" }                                                                                      { "_id" : ObjectId("507d95d5719dbef170f15bfb"), "name" : "Phone Extended Warranty", "type" : "warranty", "price" : 38 }                                                                       { "_id" : "ac7", "name" : "AC7 Phone", "type" : "phone", "price" : 320 }                                                                                                                      { "_id" : "ac3", "name" : "AC3 Phone", "type" : "phone", "price" : 200 }   
+
+-- Q5 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "type" : [ "accessory", "case" ], "price" : 12 }                                                                     { "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "type" : [ "accessory", "case" ], "price" : 12 }                                                                   { "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "type" : [ "accessory", "case" ], "price" : 12.5 }                                                                 { "_id" : ObjectId("507d95d5719dbef170f15bf9"), "name" : "AC3 Series Charger", "type" : [ "accessory", "charger" ], "price" : 19 }                                                            { "_id" : ObjectId("507d95d5719dbef170f15bfe"), "name" : "Phone Service Basic Plan", "type" : "service" }                                                                                     { "_id" : ObjectId("507d95d5719dbef170f15c00"), "name" : "Phone Service Family Plan", "type" : "service" }                                                                                    { "_id" : ObjectId("507d95d5719dbef170f15bff"), "name" : "Phone Service Core Plan", "type" : "service" }
+
+-- Q6 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "type" : [ "accessory", "case" ], "price" : 12 }                                                                     { "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "type" : [ "accessory", "case" ], "price" : 12 }                                                                   { "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "type" : [ "accessory", "case" ], "price" : 12.5 }                                                                 { "_id" : ObjectId("507d95d5719dbef170f15bf9"), "name" : "AC3 Series Charger", "type" : [ "accessory", "charger" ], "price" : 19 }                                                            { "_id" : ObjectId("507d95d5719dbef170f15bfe"), "name" : "Phone Service Basic Plan", "type" : "service" }                                                                                     { "_id" : ObjectId("507d95d5719dbef170f15c01"), "name" : "Cable TV Basic Service Package", "type" : "tv" }                                                                                    { "_id" : ObjectId("507d95d5719dbef170f15c00"), "name" : "Phone Service Family Plan", "type" : "service" }                                                                                    { "_id" : ObjectId("507d95d5719dbef170f15bff"), "name" : "Phone Service Core Plan", "type" : "service" }                                                                                      { "_id" : ObjectId("507d95d5719dbef170f15bfb"), "name" : "Phone Extended Warranty", "type" : "warranty", "price" : 38 }                                                                       { "_id" : "ac7", "name" : "AC7 Phone", "type" : "phone", "price" : 320 }                                                                                                                      { "_id" : "ac3", "name" : "AC3 Phone", "type" : "phone", "price" : 200 }  
+
+-- Q7 OUTPUT--
+{ "_id" : ObjectId("507d95d5719dbef170f15bfd"), "name" : "AC3 Case Red", "type" : [ "accessory", "case" ], "price" : 12 
+{ "_id" : ObjectId("507d95d5719dbef170f15bfa"), "name" : "AC3 Case Green", "type" : [ "accessory", "case" ], "price" : 12 }                                                                   { "_id" : ObjectId("507d95d5719dbef170f15bfc"), "name" : "AC3 Case Black", "type" : [ "accessory", "case" ], "price" : 12.5 }   

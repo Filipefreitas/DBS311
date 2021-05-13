@@ -1,0 +1,136 @@
+
+Procedure ODD_OR_EVEN compiled
+
+old:DECLARE
+    inputInt NUMBER:= &inputInt;
+BEGIN 
+   odd_or_even(inputInt); 
+END odd_or_even; 
+
+new:DECLARE
+    inputInt NUMBER:= 4;
+BEGIN 
+   odd_or_even(inputInt); 
+END odd_or_even;
+The number is even.
+
+
+PL/SQL procedure successfully completed.
+
+old:DECLARE
+    empID NUMBER:= &empID;
+    firstName VARCHAR2(255);
+    lastName VARCHAR2(255);
+    emailAddress  VARCHAR2(255);
+    phoneNumber VARCHAR2(50);
+    hireDate DATE;
+    jobTitle VARCHAR2(255);
+BEGIN 
+   SELECT 
+        first_name
+        , last_name
+        , email
+        , phone
+        , hire_date
+        , job_title
+    INTO
+        firstName
+        , lastName
+        , emailAddress
+        , phoneNumber
+        , hireDate
+        , jobTitle
+    FROM employees
+    WHERE employee_id = empID;
+    DBMS_OUTPUT.PUT_LINE ('First name: ' || firstName);
+    DBMS_OUTPUT.PUT_LINE ('Last name: ' || lastName);
+    DBMS_OUTPUT.PUT_LINE ('Email: ' || emailAddress);
+    DBMS_OUTPUT.PUT_LINE ('Phone: ' || phoneNumber);
+    DBMS_OUTPUT.PUT_LINE ('Hire Date: ' || TO_CHAR(hireDate, 'DD-MON-YYYY'));
+    DBMS_OUTPUT.PUT_LINE ('Job Title: ' || jobTitle);
+
+EXCEPTION
+WHEN NO_DATA_FOUND
+    THEN
+        DBMS_OUTPUT.PUT_LINE ('Employee ID not found!');        
+WHEN TOO_MANY_ROWS
+    THEN
+    DBMS_OUTPUT.PUT_LINE ('Error: more than one employee registered with this ID!');
+END; 
+
+new:DECLARE
+    empID NUMBER:= 107;
+    firstName VARCHAR2(255);
+    lastName VARCHAR2(255);
+    emailAddress  VARCHAR2(255);
+    phoneNumber VARCHAR2(50);
+    hireDate DATE;
+    jobTitle VARCHAR2(255);
+BEGIN 
+   SELECT 
+        first_name
+        , last_name
+        , email
+        , phone
+        , hire_date
+        , job_title
+    INTO
+        firstName
+        , lastName
+        , emailAddress
+        , phoneNumber
+        , hireDate
+        , jobTitle
+    FROM employees
+    WHERE employee_id = empID;
+    DBMS_OUTPUT.PUT_LINE ('First name: ' || firstName);
+    DBMS_OUTPUT.PUT_LINE ('Last name: ' || lastName);
+    DBMS_OUTPUT.PUT_LINE ('Email: ' || emailAddress);
+    DBMS_OUTPUT.PUT_LINE ('Phone: ' || phoneNumber);
+    DBMS_OUTPUT.PUT_LINE ('Hire Date: ' || TO_CHAR(hireDate, 'DD-MON-YYYY'));
+    DBMS_OUTPUT.PUT_LINE ('Job Title: ' || jobTitle);
+
+EXCEPTION
+WHEN NO_DATA_FOUND
+    THEN
+        DBMS_OUTPUT.PUT_LINE ('Employee ID not found!');        
+WHEN TOO_MANY_ROWS
+    THEN
+    DBMS_OUTPUT.PUT_LINE ('Error: more than one employee registered with this ID!');
+END;
+First name: Summer
+Last name: Payne
+Email: summer.payne@example.com
+Phone: 515.123.8181
+Hire Date: 07-JUN-2016
+Job Title: Public Accountant
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure UPDATE_PRICE_BY_CAT compiled
+
+70 rows updated
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure UPDATE_PRICE_UNDER_AVG compiled
+
+199 rows updated
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure PRODUCT_PRICE_REPORT compiled
+
+Cheap: 84
+Fair: 201
+Expensive: 204
+
+
+PL/SQL procedure successfully completed.
+

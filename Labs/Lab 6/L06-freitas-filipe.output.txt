@@ -1,0 +1,62 @@
+
+Procedure CALCFACTORIAL compiled
+
+120
+6
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure CALCULATE_SALARY compiled
+
+First name: Summer
+Last name: Payne
+Salary: 12155,06
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure WAREHOUSES_REPORT compiled
+
+Warehouse ID: 1
+Warehouse name: Southlake, Texas
+City: Southlake
+State: Texas
+Warehouse ID: 2
+Warehouse name: San Francisco
+City: South San Francisco
+State: California
+Warehouse ID: 3
+Warehouse name: New Jersey
+City: South Brunswick
+State: New Jersey
+Warehouse ID: 4
+Warehouse name: Seattle, Washington
+City: Seattle
+State: Washington
+Warehouse ID: 5
+Warehouse name: Toronto
+City: Toronto
+State: Ontario
+Warehouse ID: 6
+Warehouse name: Sydney
+City: Sydney
+State: New South Wales
+Warehouse ID: 7
+Warehouse name: Mexico City
+City: Mexico City
+State: Distrito Federal,
+Warehouse ID: 8
+Warehouse name: Beijing
+City: Beijing
+State: no state
+Warehouse ID: 9
+Warehouse name: Bombay
+City: Bombay
+State: Maharashtra
+
+
+PL/SQL procedure successfully completed.
+

@@ -1,0 +1,73 @@
+
+LAST_NAME                                                         HIRE_DATE                                                                                                                   ------------------------------------------------------------------ --------
+Hayes                                                                                                                                                                                                                                                           06/04/16
+Simmons                                                                                                                                                                                                                                                         10/04/16
+Henderson                                                                                                                                                                                                                                                       10/04/16
+Stevens                                                                                                                                                                                                                                                         21/04/16
+Henry                                                                                                                                                                                                                                                           21/04/16
+Kennedy                                                                                                                                                                                                                                                         23/04/16
+Ferguson                                                                                                                                                                                                                                                        24/04/16
+Coleman                                                                                                                                                                                                                                                         01/05/16
+Boyd                                                                                                                                                                                                                                                            11/05/16
+Sanders                                                                                                                                                                                                                                                         18/05/16
+Cox                                                                                                                                                                                                                                                             21/05/16
+Rose                                                                                                                                                                                                                                                            23/05/16
+Warren                                                                                                                                                                                                                                                          24/05/16
+
+13 rows selected. 
+
+
+NAME                                                              CREDIT_LIMIT                                                                                                                ------------------------------------------------------------------ ------------
+Raytheon                                                                                                                                                                                                                                                                 100
+Plains GP Holdings                                                                                                                                                                                                                                                       100
+US Foods Holding                                                                                                                                                                                                                                                         100
+AbbVie                                                                                                                                                                                                                                                                   100
+Centene                                                                                                                                                                                                                                                                  100
+Community Health Systems                                                                                                                                                                                                                                                 100
+Alcoa                                                                                                                                                                                                                                                                    100
+International Paper                                                                                                                                                                                                                                                      100
+Emerson Electric                                                                                                                                                                                                                                                         100
+MGM Resorts International                                                                                                                                                                                                                                                100
+Farmers Insurance Exchange                                                                                                                                                                                                                                               100
+
+11 rows selected. 
+
+
+CATEGORY_ID PRODUCT_ID PRODUCT_NAME                                                      LIST_PRICE	                                                                                      ----------- ---------- ------------------------------------------------------------------ ----------
+          1        228 Intel Xeon E5-2699 V3 (OEM/Tray)                                                                                                                                                                                                                                   3410,46
+          2        133 PNY VCQP6000-PB                                                                                                                                                                                                                                                    5499,99
+          4        190 Supermicro X10SDV-8C-TLN4F                                                                                                                                                                                                                                          948,99
+          5         50 Intel SSDPECME040T401                                                                                                                                                                                                                                              8867,99
+
+
+CATEGORY_ID CATEGORY_NAME                                                                                                                                                                                                                                                  
+----------- ------------------------------------------------------------------
+          5 Storage                                                                                                                                                                                                                                                        
+
+
+PRODUCT_NAME                                                      LIST_PRICE                                                                                                                  
+------------------------------------------------------------------ ----------
+Intel Xeon E5-2687W                                                                                                                                                                                                                                                 710,99
+Intel Xeon E5-2680 V2                                                                                                                                                                                                                                               701,95
+Intel Core i7-980                                                                                                                                                                                                                                                   699,99
+Intel Core i7-7820X                                                                                                                                                                                                                                                 678,75
+Intel Core i7-3930K                                                                                                                                                                                                                                                    660
+Intel Xeon E5-2630 V4                                                                                                                                                                                                                                               647,99
+Intel Xeon E5-2630 V3                                                                                                                                                                                                                                               629,99
+Intel Core i7-4930K                                                                                                                                                                                                                                                 624,04
+Intel Core i7-4790K                                                                                                                                                                                                                                                 620,95
+Intel Xeon E5-2640 V2                                                                                                                                                                                                                                               608,95
+Intel Xeon E5-1650 V4                                                                                                                                                                                                                                               601,99
+Intel Xeon E5-1650 V4 (OEM/Tray)                                                                                                                                                                                                                                    594,99
+Intel Xeon E5-2630 V3 (OEM/Tray)                                                                                                                                                                                                                                    589,99
+Intel Xeon E5-2630 V2                                                                                                                                                                                                                                               588,95
+Intel Xeon E5-1650 V3                                                                                                                                                                                                                                               564,89
+Intel Core i7-5930K                                                                                                                                                                                                                                                 554,99
+
+16 rows selected. 
+
+
+MAX(LIST_PRICE)
+---------------
+        8867,99
+

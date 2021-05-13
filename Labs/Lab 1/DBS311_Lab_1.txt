@@ -1,0 +1,81 @@
+-- Q1: Write a query to display the tomorrow’s date in the following format:
+    --January 10th of year 2019
+SELECT to_char(sysdate + 1, 'Month fmddth" of year "yyyy') AS "Tomorrow"
+FROM dual;
+
+-- Q2: Define an SQL variable called “tomorrow”, assign it a value of tomorrow’s date and use it in an SQL statement. 
+--Here the question is asking you to use a Substitution variable. Instead of using the constant values in your queries, you can use variables to store and reuse the values.
+DEFINE tomorrow = to_char(sysdate + 1, 'Month fmddth" of year "yyyy');
+SELECT &tomorrow as "Tomorrow"
+FROM dual;
+UNDEFINE tomorrow;
+
+-- Q3: For each product in category 2, 3, and 5, show product ID, product name, list price, and the new list price increased by 2%. 
+--Display a new list price as a whole number. 
+--In your result, add a calculated column to show the difference of old and new list prices.
+
+define new_price_rate = 0.02
+define new_price = round(list_price * (1 + &new_price_rate), 0) 
+SELECT
+    product_ID
+    , product_name
+    , list_price
+    , &new_price as "new_price"
+    , &new_price - list_price as "price_difference"
+FROM products
+WHERE category_id in (2, 3, 5)
+ORDER BY category_id, product_id;
+
+undefine new_price_rate
+undefine new_price;
+
+--Q4: For employees whose manager ID is 2, write a query that displays the employee’s Full
+--Name and Job Title in the following format:
+--Summer, Payne is Public Accountant.
+--Sort the result based on employee ID.
+SELECT last_name ||', '|| first_name ||' is '|| job_title as "Employee Info"
+FROM employees
+WHERE manager_id = 2
+ORDER BY employee_id;
+
+-- Q5: For each employee hired before October 2016, display the employee’s last name, hire date and calculate the number of YEARS between TODAY and the date the employee was hired.
+-- Label the column Years worked.
+-- Order your results by the number of years employed. Round the number of years employed up to the closest whole number.
+-- The output result includes 89 rows. See the partial result (The first 10 rows).
+-- If you get the result in a different order, sort the result first based on the hire date column and then based on the number of years worked.
+SELECT 
+    last_name
+    , TO_CHAR(hire_date, 'DD-MON-YYYY') as "Hire Date"
+    , ROUND((SYSDATE - hire_date)/365, 0) as "Years worked"
+FROM employees
+WHERE hire_date < TO_DATE('01-10-2016', 'DD-MM-YYYY')
+ORDER BY hire_date;
+
+-- Q6: Display each employee’s last name, hire date, and the review date, which is the first Tuesday after a year of service, but only for those hired after January 1, 2016.
+-- Label the column REVIEW DAY.
+-- Format the dates to appear in the format like: TUESDAY, August the Thirty-First of year 2016
+-- You can use ddspth to have the above format for the day.
+-- Sort by review date
+-- The Query returns 107 rows.
+SELECT
+    last_name
+    , hire_date
+    , to_char(NEXT_DAY(hire_date + 366, 'TUESDAY'), 'DAY, Month " the " ddspth " of year "yyyy') as "Review day"
+FROM employees
+WHERE hire_date > TO_DATE('01-01-2016', 'DD-MM-YYYY')
+ORDER BY "Review day";
+
+-- Q7: For all warehouses, display warehouse id, warehouse name, city, and state. For warehouses with the null value for the state column, display “unknown”. 
+--Sort the result based on the warehouse ID.
+SELECT
+    w.warehouse_id
+    , w.warehouse_name
+    , l.city
+    , CASE
+        WHEN l.state is  NULL THEN 'Unknown'
+        ELSE l.state
+    END as "STATE"
+FROM warehouses w
+LEFT JOIN locations l
+ON w.location_id = l.location_id
+ORDER BY w.warehouse_id

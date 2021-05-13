@@ -1,0 +1,94 @@
+--Q1 OUTPUT--
+{ "student_id" : 0, "class_id" : 30 }
+{ "student_id" : 0, "class_id" : 28 }                                                                   
+{ "student_id" : 0, "class_id" : 27 }                                                                   
+{ "student_id" : 0, "class_id" : 24 }                                                                  
+{ "student_id" : 0, "class_id" : 16 }                                                                   
+{ "student_id" : 0, "class_id" : 11 }                                                                   
+{ "student_id" : 0, "class_id" : 10 }                                                                   
+{ "student_id" : 0, "class_id" : 7 }                                                                    
+{ "student_id" : 0, "class_id" : 6 }                                                                    
+{ "student_id" : 0, "class_id" : 5 }                                                                    
+{ "student_id" : 0, "class_id" : 2 }                                                                    
+{ "student_id" : 1, "class_id" : 28 }                                                                   
+{ "student_id" : 1, "class_id" : 22 }                                                                   
+{ "student_id" : 1, "class_id" : 18 }                                                                   
+{ "student_id" : 1, "class_id" : 16 }                                                                   
+{ "student_id" : 1, "class_id" : 13 }                                                                   
+{ "student_id" : 2, "class_id" : 27 }                                                                   
+{ "student_id" : 2, "class_id" : 25 }                                                                   
+{ "student_id" : 2, "class_id" : 24 }                                                                   
+{ "student_id" : 3, "class_id" : 25 } 
+
+--Q2 OUTPUT--
+>excluding 10 and 12:
+{ "student_id" : 11, "class_id" : 25 }                                                                  
+{ "student_id" : 11, "class_id" : 24 }  
+
+>including 10 and 12:
+{ "student_id" : 10, "class_id" : 5 }                                                                   
+{ "student_id" : 11, "class_id" : 25 }                                                                  
+{ "student_id" : 11, "class_id" : 24 }                                                                  
+{ "student_id" : 12, "class_id" : 27 }                                                                  
+{ "student_id" : 12, "class_id" : 23 }                                                                  
+{ "student_id" : 12, "class_id" : 21 }                                                                  
+{ "student_id" : 12, "class_id" : 13 }                                                
+{ "student_id" : 12, "class_id" : 11 }                                                                  
+{ "student_id" : 12, "class_id" : 10 }                                                                  
+{ "student_id" : 12, "class_id" : 4 }                                                                   
+{ "student_id" : 12, "class_id" : 3 }  
+
+--Q3 OUTPUT--
+{ "class_id" : 27 }                                                                                     
+{ "class_id" : 18 }                                                                                     
+{ "class_id" : 24 }                                                                                     
+{ "class_id" : 30 }                                                                                     
+{ "class_id" : 2 }                                                                                      
+{ "class_id" : 13 }                                                                                     
+{ "class_id" : 10 }                                                                                     
+{ "class_id" : 5 }                                                                                      
+{ "class_id" : 11 }                                                                                     
+{ "class_id" : 16 }                                                                                     
+{ "class_id" : 28 }                                                                                     
+{ "class_id" : 22 }                                                                                     
+{ "class_id" : 7 }                                                                                      
+{ "class_id" : 24 }                                                                                     
+{ "class_id" : 25 }                                                                                     
+{ "class_id" : 16 }                                                                                     
+{ "class_id" : 25 }                                                                                     
+{ "class_id" : 10 }                                                                                     
+{ "class_id" : 27 }                                                                                     
+{ "class_id" : 12 } 
+
+--Q4 OUTPUT--
+{ "student_id" : 3, "class_id" : 11, "scores" : { "type" : "quiz", "score" : 99.70947557740388 } }      
+{ "student_id" : 12, "class_id" : 27, "scores" : { "type" : "homework", "score" : 99.45407211904612 } } 
+{ "student_id" : 14, "class_id" : 20, "scores" : { "type" : "exam", "score" : 99.70054435154259 } }     
+{ "student_id" : 14, "class_id" : 6, "scores" : { "type" : "exam", "score" : 99.49380951735357 } }      
+{ "student_id" : 21, "class_id" : 30, "scores" : { "type" : "homework", "score" : 99.62785870384556 } } 
+{ "student_id" : 21, "class_id" : 25, "scores" : { "type" : "quiz", "score" : 99.9092162705742 } }      
+{ "student_id" : 41, "class_id" : 19, "scores" : { "type" : "exam", "score" : 99.9822072102702 } }      
+{ "student_id" : 42, "class_id" : 14, "scores" : { "type" : "homework", "score" : 99.6826006851697 } }  
+{ "student_id" : 43, "class_id" : 27, "scores" : { "type" : "exam", "score" : 99.4040826043679 } }      
+{ "student_id" : 44, "class_id" : 11, "scores" : { "type" : "exam", "score" : 99.40117530792308 } }     
+{ "student_id" : 44, "class_id" : 7, "scores" : { "type" : "exam", "score" : 99.36623841444576 } } 
+
+--Q5 OUTPUT--
+{ "_id" : 0, "max_class_id" : 30, "min_class_id" : 2 }                                                  
+{ "_id" : 1, "max_class_id" : 28, "min_class_id" : 13 }                                                 
+{ "_id" : 2, "max_class_id" : 27, "min_class_id" : 24 }                                                 
+{ "_id" : 3, "max_class_id" : 25, "min_class_id" : 3 }                                                  
+{ "_id" : 4, "max_class_id" : 26, "min_class_id" : 0 }                                                  
+{ "_id" : 5, "max_class_id" : 30, "min_class_id" : 0 }                                                  
+{ "_id" : 6, "max_class_id" : 29, "min_class_id" : 8 }                                                  
+{ "_id" : 7, "max_class_id" : 17, "min_class_id" : 17 }                                                 
+{ "_id" : 8, "max_class_id" : 29, "min_class_id" : 0 }                                                  
+{ "_id" : 9, "max_class_id" : 30, "min_class_id" : 0 }  
+
+--Q6 OUTPUT--
+{ "_id" : 48, "totalFailedExams" : 3 } 
+
+>> return the list of failed exams:
+{ "student_id" : 48, "class_id" : 2, "scores" : { "type" : "exam", "score" : 25.42712077857534 } }      
+{ "student_id" : 48, "class_id" : 10, "scores" : { "type" : "exam", "score" : 19.75901367795435 } }     
+{ "student_id" : 48, "class_id" : 15, "scores" : { "type" : "exam", "score" : 17.49112864462374 } } 
