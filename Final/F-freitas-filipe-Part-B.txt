@@ -1,0 +1,175 @@
+SECTION B
+Question 1: 5 marks
+- Load in the documents into a collection called “music” from the dbs311.final.json file
+WHAT TO HAND IN: The output from a db.music.find()
+
+	--Question 1 command--
+	> db.music.find() 
+
+	--Question 1 output--
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341286"), "artist" : "Pink Floyd", "albums" : [ { "title" : "The Dark Side of the Moon", "year" : 1973 }, { "title" : "The Wall", "year" : 1979 }, { "title" : "The Division Bell", "year" : 1994 }, { "title" : "Animals", "year" : 1977 }, { "title" : "Wish You Were Here", "year" : 1975 } ], "singers" : "David Gilmore and Roger Waters" }                                                                                                         
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341287"), "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 }, { "title" : "Led Zeppelin 3", "year" : 1970 }, { "title" : "Led Zeppelin 4", "year" : 1971 } ], "singers" : "Robert Plant" }                                                      
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341288"), "artist" : "AC/DC", "albums" : [ { "title" : "High Voltage", "year" : 1976 }, { "title" : "Back in Black", "year" : 1980 }, { "title" : "Dirty Deeds Done Dirt Cheap", "year" : 1976 }, { "title" : "Highway to Hell", "year" : 1979 } ], "singers" : "Bon Scott" }                                                     
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341289"), "artist" : "Rush", "albums" : [ { "title" : "A Farewell to Kings", "year" : 1977 }, { "title" : "Moving Pictures", "year" : 1981 }, { "title" : "2112", "year" : 1976 }, { "title" : "Fly By Night", "year" : 1975 } ], "singers" : "Geddy Lee" }  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2: 5 marks
+- Insert a new document into the collection, following the same structure as in the music collection, as follows:
+- Artist is “Scorpions”
+- Albums are: “Lovedrive” in 1979; “Blackout” in 1982, “Love at first sting” in 1984, “Eye to Eye” in 1999
+- Singer is: Klaus Meine
+WHAT TO HAND IN: The insert command – and – the return code – and – the output from a db.music.find()
+
+	--Question 2 command--
+	> db.music.insertOne({artist: "Scorpions", albums: [{title: "Lovedrive", year: 1979}, {title: "Blackout", year: 1982}, {title: "Love at first string", year: 1984}, {title: "Eye to Eye", year: 1999}], singers: "Klaus Meine"})   
+
+	--Question 2 return code
+	{"acknowledged" : true, "insertedId" : ObjectId("6082af91b85158c4b82c65f4")} 
+
+	--Question 2 output--
+	> db.music.find() 
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341286"), "artist" : "Pink Floyd", "albums" : [ { "title" : "The Dark Side of the Moon", "year" : 1973 }, { "title" : "The Wall", "year" : 1979 }, { "title" : "The Division Bell", "year" : 1994 }, { "title" : "Animals", "year" : 1977 }, { "title" : "Wish You Were Here", "year" : 1975 } ], "singers" : "David Gilmore and Roger Waters" }
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341287"), "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 }, { "title" : "Led Zeppelin 3", "year" : 1970 }, { "title" : "Led Zeppelin 4", "year" : 1971 } ], "singers" : "Robert Plant" }      
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341288"), "artist" : "AC/DC", "albums" : [ { "title" : "High Voltage", "year" : 1976 }, { "title" : "Back in Black", "year" : 1980 }, { "title" : "Dirty Deeds Done Dirt Cheap", "year" : 1976 }, { "title" : "Highway to Hell", "year" : 1979 } ], "singers" : "Bon Scott" }     
+
+	{ "_id" : ObjectId("6082ac4f5ffdc91020341289"), "artist" : "Rush", "albums" : [ { "title" : "A Farewell to Kings", "year" : 1977 }, { "title" : "Moving Pictures", "year" : 1981 }, { "title" : "2112", "year" : 1976 }, { "title" : "Fly By Night", "year" : 1975 } ], "singers" : "Geddy Lee" }                       
+
+	{ "_id" : ObjectId("6082af91b85158c4b82c65f4"), "artist" : "Scorpions", "albuns" : [ { "title" : "Lovedrive", "year" : 1979 }, { "title" : "Blackout", "year" : 1982 }, { "title" : "Love at first string", "year" : 1984 }, { "title" : "Eye to Eye", "year" : 1999 } ], "singers" : "Klaus Meine" }  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 3: 5 marks
+- Run a query which will output all of the bands and albums which hit the market in either the
+1960s OR the 1990s.
+- The result set should include band, album title and year – nothing else (ie: no “_Id”)
+WHAT TO HAND IN: The query – and – the output as described above
+
+	--Question 3 solution--
+	> db.music.find({"$or": [{'albums.year': {$gte: 1960, $lte: 1969}}, {'albums.year': {$gte: 1990, $lte: 1999}}]},{_id: 0, artist: 1, 'albums.title': 1, 'albums.year': 1})   
+
+	--Question 3 output--
+	{ "artist" : "Pink Floyd", "albums" : [ { "title" : "The Dark Side of the Moon", "year" : 1973 }, { "title" : "The Wall", "year" : 1979 }, { "title" : "The Division Bell", "year" : 1994 }, { "title" : "Animals", "year" : 1977 }, { "title" : "Wish You Were Here", "year" : 1975 } ] }    
+                         
+	{ "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 }, { "title" : "Led Zeppelin 3", "year" : 1970 }, { "title" : "Led Zeppelin 4", "year" : 1971 } ] }   
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 4: 5 marks
+- Run a query which reads a list of years and displays the bands and their albums which delivered in any year in the list
+- The result set should include band, album title and year – nothing else (ie: no “_id”)
+- Use a list of years which includes: 1971, 1973, 1975, 1977 and 1979
+WHAT TO HAND IN: A copy of your query – and – the output as described above
+
+	--Question 4 solution--
+	db.music.find({"albums.year": {$in: [1971, 1973, 1975, 1977, 1979]}})    
+
+	--Question 4 output--
+	{ "_id" : ObjectId("6082e2325ffdc910203412ae"), "artist" : "Pink Floyd", "albums" : [ { "title" : "The Dark Side of the Moon", "year" : 1973 }, { "title" : "The Wall", "year" : 1979 }, { "title" : "The Division Bell", "year" : 1994 }, { "title" : "Animals", "year" : 1977 }, { "title" : "Wish You Were Here", "year" : 1975 } ], "singers" : "David Gilmore and Roger Waters" }                                          
+	
+	{ "_id" : ObjectId("6082e2325ffdc910203412af"), "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 }, { "title" : "Led Zeppelin 3", "year" : 1970 }, { "title" : "Led Zeppelin 4", "year" : 1971 } ], "singers" : "Robert Plant" }      
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b0"), "artist" : "AC/DC", "albums" : [ { "title" : "High Voltage", "year" : 1976 }, { "title" : "Back in Black", "year" : 1980 }, { "title" : "Dirty Deeds Done Dirt Cheap", "year" : 1976 }, { "title" : "Highway to Hell", "year" : 1979 } ], "singers" : "Bon Scott" }    
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b1"), "artist" : "Rush", "albums" : [ { "title" : "A Farewell to Kings", "year" : 1977 }, { "title" : "Moving Pictures", "year" : 1981 }, { "title" : "2112", "year" : 1976 }, { "title" : "Fly By Night", "year" : 1975 } ], "singers" : "Geddy Lee" }                       
+
+	{ "_id" : ObjectId("6082e2f3b85158c4b82c65f6"), "artist" : "Scorpions", "albums" : [ { "title" : "Lovedrive", "year" : 1979 }, { "title" : "Blackout", "year" : 1982 }, { "title" : "Love at first string", "year" : 1984 }, { "title" : "Eye to Eye", "year" : 1999 } ], "singers" : "Klaus Meine" }   
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 5: 5 marks
+- Run a set of commands which will add in a new attribute to each document called “Guitarist”
+- The values should be as follows:
+- For Rush – the guitarist is “Alex Lifeson”
+- For Scorpions – the guitarist is “Mathias Jabs”
+- For AC/DC – the guitarist is “Malcolm Young”
+- For Pink Floyd – the guitarist is “David Gilmore” and “Roger Waters” (should be a list)
+- For Led Zeppelin – the guitarist is “Jimmy Page”
+WHAT TO HAND IN: A copy of your update commands – the return codes – and – the output from a
+db.music.find() once all updates are complete (only do this at the end)
+
+	--Question 5 command/ return code--
+	> db.music.update({artist: "Rush"}, {$set: {"guitarist": "Alex Lifeson"}})  
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })   
+
+	> db.music.update({artist: "Scorpions"}, {$set: {"guitarist": "Mathias Jabs"}})
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })   
+
+	> db.music.update({artist: "AC/DC"}, {$set: {"guitarist": "Malcolm Young"}}) 
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })   
+
+	> db.music.update({artist: "Pink Floyd"}, {$set: {"guitarist": ["David Gilmour", "Roger Waters"]}})
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })   
+
+	> db.music.update({artist: "Led Zeppelin"}, {$set: {"guitarist": "Jimmy Page"}}) 
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })   
+
+	--Question 5 output--
+	> db.music.find() 
+	{ "_id" : ObjectId("6082e2325ffdc910203412ae"), "artist" : "Pink Floyd", "albums" : [ { "title" : "The Dark Side of the Moon", "year" : 1973 }, { "title" : "The Wall", "year" : 1979 }, { "title" : "The Division Bell", "year" : 1994 }, { "title" : "Animals", "year" : 1977 }, { "title" : "Wish You Were Here", "year" : 1975 } ], "singers" : "David Gilmore and Roger Waters", "guitarist" : [ "David Gilmour", "Roger Waters" ] }                                                                                               
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412af"), "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 }, { "title" : "Led Zeppelin 3", "year" : 1970 }, { "title" : "Led Zeppelin 4", "year" : 1971 } ], "singers" : "Robert Plant", "guitarist" : "Jimmy Page" }                                        
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b0"), "artist" : "AC/DC", "albums" : [ { "title" : "High Voltage", "year" : 1976 }, { "title" : "Back in Black", "year" : 1980 }, { "title" : "Dirty Deeds Done Dirt Cheap", "year" : 1976 }, { "title" : "Highway to Hell", "year" : 1979 } ], "singers" : "Bon Scott", "guitarist" : "Malcolm Young" }                                    
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b1"), "artist" : "Rush", "albums" : [ { "title" : "A Farewell to Kings", "year" : 1977 }, { "title" : "Moving Pictures", "year" : 1981 }, { "title" : "2112", "year" : 1976 }, { "title" : "Fly By Night", "year" : 1975 } ], "singers" : "Geddy Lee", "guitarist" : "Alex Lifeson" }                                                             
+	{ "_id" : ObjectId("6082e2f3b85158c4b82c65f6"), "artist" : "Scorpions", "albums" : [ { "title" : "Lovedrive", "year" : 1979 }, { "title" : "Blackout", "year" : 1982 }, { "title" : "Love at first string", "year" : 1984 }, { "title" : "Eye to Eye", "year" : 1999 } ], "singers" : "Klaus Meine", "guitarist" : "Mathias Jabs" }                                                        
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 6: 5 marks
+- Run a query which shows each album and the year from the Scorpions
+- Run a command which increments each of the years by 5 for every album by Scorprions
+- Run a query which shows each album and the year from the Scorpions
+WHAT TO HAND IN: A copy of all commands – the return codes – and – the output of the query commands
+
+	--Question 6 solution--
+	--Question 6 query
+	> db.music.find({artist: "Scorpions"}, {_id: 0, artist: 1, 'albums.title': 1, 'albums.year': 1})  
+
+	--Question 6 output	
+	{ "artist" : "Scorpions", "albums" : [ { "title" : "Lovedrive", "year" : 1979 }, { "title" : "Blackout", "year" : 1982 }, { "title" : "Love at first string", "year" : 1984 }, { "title" : "Eye to Eye", "year" : 1999 } ] }    	
+
+
+	--Question 6 query
+	> db.music.update({artist: "Scorpions"}, {"$inc": {"albums.$[].year": 5}}, {_id: 0, artist: 1, 'albuns.title': 1, 'albuns.year': 1})                                                 	
+	--Return code
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })                                                 
+
+	
+	--Question 6 query
+	> db.music.find({artist: "Scorpions"}, {_id: 0, artist: 1, 'albums.title': 1, 'albums.year': 1})
+
+	--Question 6 output	
+	{ "artist" : "Scorpions", "albums" : [ { "title" : "Lovedrive", "year" : 1984 }, { "title" : "Blackout", "year" : 1987 }, { "title" : "Love at first string", "year" : 1989 }, { "title" : "Eye to Eye", "year" : 2004 } ] }   
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 7: 5 marks
+- Run a command which removes the document for the Scorpions
+- Run a command which removes the album “The Wall” from Pink Floyd
+- Run a command which removes all albums that hit the market in the 1970s from all bands
+WHAT TO HAND IN: A copy of the commands above – the return codes – and – the output from a db.music.find()
+
+	--Question 7 solution/ return code--
+	> db.music.deleteOne({"artist": "Scorpions"})
+	{ "acknowledged" : true, "deletedCount" : 1 }     
+
+	> db.music.update({"artist": "Pink Floyd"}, {$pull: {albums: {'title': "The Wall"}}})  
+	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+	> db.music.update({}, {$pull: {albums: {year: {$gte: 1970, $lte: 1979}}}}, {multi: true})
+	WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 4 }) 
+
+	> db.music.find() 
+	{ "_id" : ObjectId("6082e2325ffdc910203412ae"), "artist" : "Pink Floyd", "albums" : [ { "title" : "The Division Bell", "year" : 1994 } ], "singers" : "David Gilmore and Roger Waters", "guitarist" : [ "David Gilmour", "Roger Waters" ] }                                                                             
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412af"), "artist" : "Led Zeppelin", "albums" : [ { "title" : "Led Zeppelin I", "year" : 1969 }, { "title" : "Led Zeppelin 2", "year" : 1969 } ], "singers" : "Robert Plant", "guitarist" : "Jimmy Page" }                                                                        
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b0"), "artist" : "AC/DC", "albums" : [ { "title" : "Back in Black", "year" : 1980 } ], "singers" : "Bon Scott", "guitarist" : "Malcolm Young" 
+
+	{ "_id" : ObjectId("6082e2325ffdc910203412b1"), "artist" : "Rush", "albums" : [ { "title" : "Moving Pictures", "year" : 1981 } ], "singers" : "Geddy Lee", "guitarist" : "Alex Lifeson" }  

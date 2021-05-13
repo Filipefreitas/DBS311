@@ -1,0 +1,5 @@
+{"artist":"Pink Floyd", "albums":[{"title":"The Dark Side of the Moon","year":1973}, {"title":"The Wall","year":1979}, {"title":"The Division Bell","year":1994}, {"title":"Animals","year":1977}, {"title":"Wish You Were Here", "year":1975}], "singers":"David Gilmore and Roger Waters"}
+{"artist":"Led Zeppelin", "albums":[{"title":"Led Zeppelin I","year":1969}, {"title":"Led Zeppelin 2","year":1969}, {"title":"Led Zeppelin 3","year":1970}, {"title":"Led Zeppelin 4","year":1971}], "singers":"Robert Plant"}
+{"artist":"AC/DC", "albums":[{"title":"High Voltage","year":1976}, {"title":"Back in Black","year":1980}, {"title":"Dirty Deeds Done Dirt Cheap","year":1976}, {"title":"Highway to Hell","year":1979}], "singers":"Bon Scott"}
+{"artist":"Rush", "albums":[{"title":"A Farewell to Kings","year":1977}, {"title":"Moving Pictures","year":1981}, {"title":"2112","year":1976}, {"title":"Fly By Night","year":1975}], "singers":"Geddy Lee"}
+

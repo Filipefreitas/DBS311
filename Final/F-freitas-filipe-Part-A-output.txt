@@ -1,0 +1,436 @@
+--Question 1 output
+
+EMPNO  JOB      WOR TOTAL_COMPENSATION
+------ -------- --- ------------------
+000010 PRES     A00             159970
+000020 MANAGER  B01              98350
+000030 MANAGER  C01             102110
+000060 MANAGER  D11              75330
+000070 MANAGER  D21              99763
+000050 MANAGER  E01              84189
+000090 MANAGER  E11              92730
+000100 MANAGER  E21              88742
+
+
+--Question 2 output
+
+EMP_NAME       
+---------------
+Abrahams
+Adamson
+Alonzo
+Brown
+Burke
+Daniels
+Davis
+Edwards
+Fraye
+Gafney
+Geyer
+Gonzales
+Gounot
+Graham
+Haas
+Hanes
+Hemminger
+Henderson
+James
+Jefferson
+John
+Johnson
+Jones
+Kermisch
+Koonitz
+Kwan
+Lea
+Lee
+Lu
+Lucchessi
+Lundquist
+Lutz
+Marenghi
+Marino
+Mehta
+Molinare
+Monteverde
+Natz
+Naughton
+Ngan
+Nicholls
+O'Brien
+O'Connell
+Orlando
+Parker
+Perez
+Pernal
+Pianka
+Plotz
+Pulaski
+Quigley
+Quill
+Quintana
+Rothman
+Sanders
+Schneider
+Schwartz
+Scoutten
+Setright
+Smith
+Sneider
+Spenser
+Springer
+Stern
+Thompson
+Walker
+Wheeler
+Williams
+Wilson
+Wong
+Yamaguchi
+Yamamoto
+Yoshimura
+
+--Question 3 output
+EMPNO	LASTNAME  	 COUNTID
+--- -------------------------- ------
+10	HAAS			2	
+10	Sanders			2
+20	Pernal			2
+20	THOMPSON		2
+30	KWAN			2
+30	Marenghi		2
+40	O'Brien			1
+50	GEYER			2
+50	Hanes			2
+60	Quigley			2
+60	STERN			2
+70	PULASKI			2
+70	Rothman			2
+80	James			1
+90	HENDERSON		2
+90	Koonitz			2
+100	Plotz			2
+100	SPENSER			2
+110	LUCCHESSI		2
+110	Ngan			2
+120	Naughton		2
+120	O'CONNELL		2
+130	QUINTANA		2
+130	Yamaguchi		2
+140	Fraye			2
+140	NICHOLLS		2
+150	ADAMSON			2
+150	Williams		2
+160	Molinare		2
+160	PIANKA			2
+170	Kermisch		2
+170	YOSHIMURA		2
+180	Abrahams		2
+180	SCOUTTEN		2
+190	Sneider			2
+190	WALKER			2
+200	BROWN			2
+200	Scoutten		2
+210	JONES			2
+210	Lu			2
+220	LUTZ			2
+220	Smith			2
+230	JEFFERSON		2
+230	Lundquist		2
+240	Daniels			2
+240	MARINO			2
+250	SMITH			2
+250	Wheeler			2
+260	JOHNSON			2
+260	Jones			2
+		
+
+--Question 4 output
+LASTNAME
+-------------------  
+ALONZO
+Koonitz
+LUTZ
+NATZ
+PEREZ
+SCHWARTZ
+
+--Question 5 output
+DEP TOTAL_COMPENSATION_TOP_EMP TOTAL_COMPENSATION_MGR DIFF_TOP_EMP_MGT
+--- -------------------------- ---------------------- ----------------
+D11                      72827                  75330            -2503
+
+
+--Question 6 output
+LASTNAME		VARIABLE_PAY
+------------		-------------
+Abrahams			236,5
+Adamson				2522
+Alonzo				2407
+Brown				2817
+Burke				55,5
+Daniels				0
+Davis				806,1
+Edwards				1285
+Fraye				0
+Gafney				188
+Geyer				4014
+Gonzales			844
+Gounot				2407
+Graham				200,3
+Haas				5220
+Hanes				0
+Hemminger			5220
+Henderson			2980
+James				128,2
+Jefferson			2174
+John				2987
+Johnson				1680
+Jones				0
+Jones				1862
+Kermisch			110,1
+Koonitz				1386,7
+Kwan				3860
+Lea				0
+Lee				2530
+Lu				0
+Lucchessi			4620
+Lundquis			189,65
+Lutz				2987
+Marenghi			0
+Marino				2901
+Mehta				1996
+Molinare			0
+Monteverde			2901
+Natz				2874
+Naughton			180
+Ngan				206,6
+Nicholls			2874
+O'Brien				846,55
+O'Connell			2940
+Orlando				2940
+Parker				1527
+Perez				2690
+Pernal				612,45
+Pianka				2180
+Plotz				0
+	
+	
+--Question 7 output
+-------a valid employee number and a 1 rating
+Procedure UPDATE_SALARY_BY_RATING compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    empRating NUMBER:= &empRating; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+
+new:DECLARE
+    empId NUMBER:= 30;
+    empRating NUMBER:= 1; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+EMP ID: 30
+OLD SALARY: 98250
+OLD BONUS: 800
+OLD COMM: 3060
+NEW SALARY: 108250
+NEW BONUS: 1100
+NEW COMM: 3213
+
+
+PL/SQL procedure successfully completed.
+
+
+-------a valid employee number and a 2 rating
+
+Procedure UPDATE_SALARY_BY_RATING compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    empRating NUMBER:= &empRating; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+
+new:DECLARE
+    empId NUMBER:= 100;
+    empRating NUMBER:= 2; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+EMP ID: 100
+OLD SALARY: 86150
+OLD BONUS: 500
+OLD COMM: 2092
+NEW SALARY: 91150
+NEW BONUS: 700
+NEW COMM: 2133,84
+
+
+PL/SQL procedure successfully completed.
+
+-------a valid employee number and a 3 rating
+
+Procedure UPDATE_SALARY_BY_RATING compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    empRating NUMBER:= &empRating; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+
+new:DECLARE
+    empId NUMBER:= 120;
+    empRating NUMBER:= 3; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+EMP ID: 120
+OLD SALARY: 49250
+OLD BONUS: 600
+OLD COMM: 2340
+NEW SALARY: 51250
+NEW BONUS: 600
+NEW COMM: 2340
+
+
+PL/SQL procedure successfully completed.
+
+-------Once with an invalid employee number
+Procedure UPDATE_SALARY_BY_RATING compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    empRating NUMBER:= &empRating; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+
+new:DECLARE
+    empId NUMBER:= 444;
+    empRating NUMBER:= 1; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+Employee ID not found!
+
+
+PL/SQL procedure successfully completed.
+
+
+--------Once with an invalid rating level
+
+Procedure UPDATE_SALARY_BY_RATING compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    empRating NUMBER:= &empRating; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+
+new:DECLARE
+    empId NUMBER:= 60;
+    empRating NUMBER:= 5; 
+BEGIN
+    update_salary_by_rating (empId, empRating);
+END update_salary_by_rating;
+Invalid rating
+
+
+PL/SQL procedure successfully completed.
+
+
+--Question 8 output
+Procedure UPDATE_EDUCATION_BY_LEVEL compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    educUpgrade CHAR(1):= '&educUpgrade'; 
+BEGIN
+    update_education_by_level (empId, educUpgrade);
+END update_education_by_level;
+
+new:DECLARE
+    empId NUMBER:= 70;
+    educUpgrade CHAR(1):= 'M'; 
+BEGIN
+    update_education_by_level (empId, educUpgrade);
+END update_education_by_level;
+EMP ID: 70
+OLD EDUCATION: 16
+NEW EDUCATION: 23
+
+
+PL/SQL procedure successfully completed.
+Procedure UPDATE_EDUCATION_BY_LEVEL compiled
+
+old:DECLARE
+    empId NUMBER:= &empId;
+    educUpgrade CHAR(1):= '&educUpgrade'; 
+BEGIN
+    update_education_by_level (empId, educUpgrade);
+END update_education_by_level;
+
+new:DECLARE
+    empId NUMBER:= 30;
+    educUpgrade CHAR(1):= 'H'; 
+BEGIN
+    update_education_by_level (empId, educUpgrade);
+END update_education_by_level;
+Downgrade now allowed
+
+
+PL/SQL procedure successfully completed.
+
+
+--Question 9 output
+PL/SQL procedure successfully completed.
+
+
+Function PHONE compiled
+
+PHONE NUMBER: (416) 123-0972
+
+
+PL/SQL procedure successfully completed.
+
+
+--Question 10 output
+Procedure UPDATEPHONE compiled
+
+PHONE NUMBER: (416) 123-6789
+E01 JOHN 6789 (416) 123-6789
+PHONE NUMBER: (416) 123-5498
+E11 EILEEN 5498 (416) 123-5498
+PHONE NUMBER: (416) 123-0972
+E21 THEODORE 0972 (416) 123-0972
+PHONE NUMBER: (416) 123-8997
+E11 ETHEL 8997 (416) 123-8997
+PHONE NUMBER: (416) 123-4502
+E11 JOHN 4502 (416) 123-4502
+PHONE NUMBER: (416) 123-2095
+E11 PHILIP 2095 (416) 123-2095
+PHONE NUMBER: (416) 123-3332
+E11 MAUDE 3332 (416) 123-3332
+PHONE NUMBER: (416) 123-9990
+E21 RAMLAL 9990 (416) 123-9990
+PHONE NUMBER: (416) 123-2103
+E21 WING 2103 (416) 123-2103
+PHONE NUMBER: (416) 123-5698
+E21 JASON 5698 (416) 123-5698
+PHONE NUMBER: (416) 123-8997
+E11 EILEEN 8997 (416) 123-8997
+PHONE NUMBER: (416) 123-3332
+E11 MICHELLE 3332 (416) 123-3332
+PHONE NUMBER: (416) 123-2103
+E21 HELENA 2103 (416) 123-2103
+PHONE NUMBER: (416) 123-5698
+E21 ROY 5698 (416) 123-5698
+
+PL/SQL procedure successfully completed.
