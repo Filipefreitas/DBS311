@@ -1,0 +1,131 @@
+
+LAST NAME      
+---------------
+JONES
+SCOUTTEN
+SMITH
+
+
+CAST(EMPNOASNUMBER)
+-------------------
+             200340
+             200330
+             200310
+             200280
+             200240
+             200220
+             200170
+             200140
+             200120
+             200010
+
+10 rows selected. 
+
+
+EMPNO  FIRSTNAME    M LASTNAME        WOR PHON HIREDATE JOB         EDLEVEL S BIRTHDAT     SALARY      BONUS       COMM PHONE       
+------ ------------ - --------------- --- ---- -------- -------- ---------- - -------- ---------- ---------- ---------- ------------
+000250 DANIEL       S SMITH           D21 0961 30/10/99 CLERK            15 M 12/11/69      49180        400       1534 416-123-0961
+000300 PHILIP       X SMITH           E11 2095 19/06/02 OPERATOR         14 M 27/10/76      37750        400       1420 416-123-2095
+
+
+        ID NAME            DEPT      YEARS JOB  
+---------- --------- ---------- ---------- -----
+        20 Pernal            20          8 Sales
+       190 Sneider           20          8 Clerk
+        40 O'Brien           38          6 Sales
+       220 Smith             51          7 Sales
+       310 Graham            66         13 Sales
+
+
+        ID NAME            DEPT JOB  
+---------- --------- ---------- -----
+       330 Burke             66 Clerk
+       320 Gonzales          66 Sales
+       270 Lea               66 Mgr  
+       280 Wilson            66 Sales
+
+
+Name                          JOB      Variable Pay
+----------------------------- -------- ------------
+Haas, Christine               PRES             5220
+Hemminger, Dian               SALESREP         5220
+Lucchessi, Vincenzo           SALESREP         4620
+Thompson, Michael             MANAGER          4100
+John, Reba                    DESIGNER         2987
+Lutz, Jennifer                DESIGNER         2987
+O'Connell, Sean               CLERK            2940
+Orlando, Greg                 CLERK            2940
+Natz, Kim                     ANALYST          2874
+Nicholls, Heather             ANALYST          2874
+Schneider, Ethel              OPERATOR         2600
+Schwartz, Eileen              OPERATOR         2600
+Spenser, Theodore             MANAGER          2592
+Lee, Wing                     FIELDREP         2530
+Wong, Helena                  FIELDREP         2530
+Quintana, Delores             ANALYST          2404
+Mehta, Ramlal                 FIELDREP         1996
+Jones, William                DESIGNER         1862
+Johnson, Sybil                CLERK            1680
+Parker, John                  OPERATOR         1527
+
+20 rows selected. 
+
+
+NAME     
+---------
+Abrahams
+Daniels
+Davis
+Edwards
+Gonzales
+Hanes
+James
+Jones
+Quill
+Sanders
+Williams
+
+NAME     
+---------
+Wilson
+
+12 rows selected. 
+
+
+NAME      JOB       SALARY  COMMISION
+--------- ----- ---------- ----------
+Abrahams  Clerk   37009,75      236,5
+Sneider   Clerk   34252,75      126,5
+James     Clerk    43504,6      128,2
+Ngan      Clerk    42508,2      206,6
+Naughton  Clerk   42954,75        180
+Yamaguchi Clerk    40505,9       75,6
+Kermisch  Clerk    42258,5      110,1
+Scoutten  Clerk    41508,6       84,2
+Wheeler   Clerk      74460      513,3
+Burke     Clerk      49988       55,5
+Gafney    Clerk    43030,5        188
+
+11 rows selected. 
+
+
+JOB      Avg_compensation_edlevel_16
+-------- ---------------------------
+FIELDREP                    40813,33
+OPERATOR                       43850
+SALESREP                       61420
+DESIGNER                     59891,6
+ANALYST                     72930,67
+MANAGER                     92078,67
+PRES                          157970
+
+7 rows selected. 
+
+
+FIRSTNAME    LASTNAME        HIREDATE BIRTHDAT    EDLEVEL      YEARS
+------------ --------------- -------- -------- ---------- ----------
+MARILYN      SCOUTTEN        07/07/03 21/02/79         17           
+WILLIAM      JONES           11/04/98 23/02/03         17         12
+DANIEL       SMITH           30/10/99 12/11/69         15          7
+PHILIP       SMITH           19/06/02 27/10/76         14          7
+

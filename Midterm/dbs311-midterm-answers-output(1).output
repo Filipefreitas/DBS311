@@ -1,0 +1,191 @@
+select count(*) from staff
+
+1          
+-----------
+         35
+
+  1 record(s) selected.
+
+
+select count(*) from employee
+
+1          
+-----------
+         42
+
+  1 record(s) selected.
+
+
+select distinct(lastname) from employee, staff where lower(lastname) = lower(name) order by lastname
+
+LASTNAME       
+---------------
+JONES          
+SCOUTTEN       
+SMITH          
+
+  3 record(s) selected.
+
+
+select cast(empno as integer) from employee except select id from staff order by 1 desc
+
+1          
+-----------
+     200340
+     200330
+     200310
+     200280
+     200240
+     200220
+     200170
+     200140
+     200120
+     200010
+
+  10 record(s) selected.
+
+
+ALTER TABLE employee ADD PHONE CHAR(15)
+DB20000I  The SQL command completed successfully.
+
+REORG TABLE employee
+DB20000I  The REORG command completed successfully.
+
+UPDATE employee SET PHONE = concat('416-123-',phoneno)
+DB20000I  The SQL command completed successfully.
+
+ALTER TABLE employee RENAME COLUMN phoneno to phoneext
+DB20000I  The SQL command completed successfully.
+
+REORG TABLE employee
+DB20000I  The REORG command completed successfully.
+
+SELECT * FROM employee WHERE LOWER(lastname) = 'smith'
+
+EMPNO  FIRSTNAME    MIDINIT LASTNAME        WORKDEPT PHONEEXT HIREDATE   JOB      EDLEVEL SEX BIRTHDATE  SALARY      BONUS       COMM        PHONE          
+------ ------------ ------- --------------- -------- -------- ---------- -------- ------- --- ---------- ----------- ----------- ----------- ---------------
+000250 DANIEL       S       SMITH           D21      0961     10/30/1999 CLERK         15 M   11/12/1969    49180.00      400.00     1534.00 416-123-0961   
+000300 PHILIP       X       SMITH           E11      2095     06/19/2002 OPERATOR      14 M   10/27/1976    37750.00      400.00     1420.00 416-123-2095   
+
+  2 record(s) selected.
+
+
+select id, name, dept, years, job from staff s where (s.salary+nvl(s.comm,0) > (select salary+nvl(comm,0) from staff where job = 'Mgr' and s.dept = dept and s.dept != 10)) or (s.years > (select years from staff where job = 'Mgr' and s.dept = dept and s.dept !=10)) order by dept, name
+
+ID     NAME      DEPT   YEARS  JOB  
+------ --------- ------ ------ -----
+    20 Pernal        20      8 Sales
+   190 Sneider       20      8 Clerk
+    40 O'Brien       38      6 Sales
+   220 Smith         51      7 Sales
+   310 Graham        66     13 Sales
+
+  5 record(s) selected.
+
+
+select name, dept, job from staff where dept = (select dept from staff where name = 'Graham') and name != 'Graham' order by name
+
+NAME      DEPT   JOB  
+--------- ------ -----
+Burke         66 Clerk
+Gonzales      66 Sales
+Lea           66 Mgr  
+Wilson        66 Sales
+
+  4 record(s) selected.
+
+
+select initcap(lastname) ||', '|| initcap(firstname) as "Name", job, bonus+comm as "Variable Pay" from employee where ((job, bonus+comm) in (select job, min(bonus+comm) from employee group by job)) or ((job, bonus+comm) in (select job, max(bonus+comm) from employee group by job)) order by 3 desc
+
+Name                          JOB      Variable Pay
+----------------------------- -------- ------------
+Haas, Christine               PRES          5220.00
+Hemminger, Dian               SALESREP      5220.00
+Lucchessi, Vincenzo           SALESREP      4620.00
+Thompson, Michael             MANAGER       4100.00
+Lutz, Jennifer                DESIGNER      2987.00
+John, Reba                    DESIGNER      2987.00
+O'Connell, Sean               CLERK         2940.00
+Orlando, Greg                 CLERK         2940.00
+Nicholls, Heather             ANALYST       2874.00
+Natz, Kim                     ANALYST       2874.00
+Schneider, Ethel              OPERATOR      2600.00
+Schwartz, Eileen              OPERATOR      2600.00
+Spenser, Theodore             MANAGER       2592.00
+Lee, Wing                     FIELDREP      2530.00
+Wong, Helena                  FIELDREP      2530.00
+Quintana, Delores             ANALYST       2404.00
+Mehta, Ramlal                 FIELDREP      1996.00
+Jones, William                DESIGNER      1862.00
+Johnson, Sybil                CLERK         1680.00
+Parker, John                  OPERATOR      1527.00
+
+  20 record(s) selected.
+
+
+select name from staff where lower(name) like '%il%' OR lower(name) like '%s' order by name
+
+NAME     
+---------
+Abrahams 
+Daniels  
+Davis    
+Edwards  
+Gonzales 
+Hanes    
+James    
+Jones    
+Quill    
+Sanders  
+Williams 
+Wilson   
+
+  12 record(s) selected.
+
+
+select name, job, salary, comm from staff where ((salary < ALL (select salary from staff where job = 'Mgr')) or (salary+comm < ALL (select salary+comm from staff where job = 'Sales'))) and (job != 'Sales')
+
+NAME      JOB   SALARY    COMM     
+--------- ----- --------- ---------
+James     Clerk  43504.60    128.20
+Ngan      Clerk  42508.20    206.60
+Naughton  Clerk  42954.75    180.00
+Yamaguchi Clerk  40505.90     75.60
+Kermisch  Clerk  42258.50    110.10
+Abrahams  Clerk  37009.75    236.50
+Sneider   Clerk  34252.75    126.50
+Scoutten  Clerk  41508.60     84.20
+Wheeler   Clerk  74460.00    513.30
+Burke     Clerk  49988.00     55.50
+Gafney    Clerk  43030.50    488.00
+
+  11 record(s) selected.
+
+
+select job, cast(avg(salary+comm+bonus) as decimal(9,2)) from employee where edlevel >=16 group by job having job != 'CLERK' order by 2 asc
+
+JOB      2          
+-------- -----------
+FIELDREP    40813.33
+OPERATOR    43850.00
+DESIGNER    59891.60
+SALESREP    61420.00
+ANALYST     72930.66
+MANAGER     92078.66
+PRES       157970.00
+
+  7 record(s) selected.
+
+
+select firstname, lastname, hiredate, birthdate, edlevel, years from employee, staff where lower(lastname) = lower(name)
+
+FIRSTNAME    LASTNAME        HIREDATE   BIRTHDATE  EDLEVEL YEARS 
+------------ --------------- ---------- ---------- ------- ------
+MARILYN      SCOUTTEN        07/07/2003 02/21/1979      17      -
+WILLIAM      JONES           04/11/1998 02/23/2003      17     12
+DANIEL       SMITH           10/30/1999 11/12/1969      15      7
+PHILIP       SMITH           06/19/2002 10/27/1976      14      7
+
+  4 record(s) selected.
+
+
