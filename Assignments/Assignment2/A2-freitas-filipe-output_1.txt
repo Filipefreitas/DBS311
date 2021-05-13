@@ -1,0 +1,31 @@
+Connection is Successful!
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 1
+Enter the customer ID: 4
+-------------- Add Products to Cart --------------
+Enter the product ID: 112
+Product Price: 808.92
+Enter the product Quantity: 3
+Enter 1 to add more products or 0 to checkout: 0
+------- Ordered Products ---------
+---Item 1
+Product ID: 112
+Price: 808.92
+Quantity: 3
+----------------------------------
+Total: 2426.76
+Would you like to checkout? (Y/y or N/n) t
+Wrong input. Try again...
+Would you like to checkout? (Y/y or N/n) 0
+Wrong input. Try again...
+Would you like to checkout? (Y/y or N/n) 1
+Wrong input. Try again...
+Would you like to checkout? (Y/y or N/n) y
+The order is successfully completed.
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 0
+Good bye!...

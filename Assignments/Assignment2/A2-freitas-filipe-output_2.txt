@@ -1,0 +1,76 @@
+Connection is Successful!
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 5
+You entered a wrong value. Enter an option (0-1): 1
+Enter the customer ID: 1000
+The customer does not exist.
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 44
+You entered a wrong value. Enter an option (0-1): 1
+Enter the customer ID: 44
+-------------- Add Products to Cart --------------
+Enter the product ID: 112
+Product Price: 808.92
+Enter the product Quantity: 2
+Enter 1 to add more products or 0 to checkout: 1
+Enter the product ID: 115
+Product Price: 699.99
+Enter the product Quantity: 3
+Enter 1 to add more products or 0 to checkout: 0
+------- Ordered Products ---------
+---Item 1
+Product ID: 112
+Price: 808.92
+Quantity: 2
+---Item 2
+Product ID: 115
+Price: 699.99
+Quantity: 3
+----------------------------------
+Total: 3717.81
+Would you like to checkout? (Y/y or N/n) y
+The order is successfully completed.
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 1
+Enter the customer ID: 44
+-------------- Add Products to Cart --------------
+Enter the product ID: 110
+Product Price: 3192.97
+Enter the product Quantity: 2
+Enter 1 to add more products or 0 to checkout: 1
+Enter the product ID: 116
+Product Price: 731.99
+Enter the product Quantity: 1
+Enter 1 to add more products or 0 to checkout: 1
+Enter the product ID: 117
+Product Price: 695.99
+Enter the product Quantity: 3
+Enter 1 to add more products or 0 to checkout: 0
+------- Ordered Products ---------
+---Item 1
+Product ID: 110
+Price: 3192.97
+Quantity: 2
+---Item 2
+Product ID: 116
+Price: 731.99
+Quantity: 1
+---Item 3
+Product ID: 117
+Price: 695.99
+Quantity: 3
+----------------------------------
+Total: 9205.9
+Would you like to checkout? (Y/y or N/n) n
+The order is cancelled.
+******************** Main Menu ********************
+1) Login
+0) Exit
+Enter an option (0-1): 0
+Good bye!...

@@ -1,0 +1,110 @@
+Employee Number   Full name         Job Title                       Start date                   
+                12 James ,Elliott     Accountant                        [September 30th of 2016 ]    
+                11 Ramirez ,Tyler     Accountant                        [September 28th of 2016 ]    
+                27 Long ,Kai          Stock Clerk                       [September 28th of 2016 ]    
+                 2 Rivera ,Jude       Administration Vice President     [September 21st of 2016 ]    
+               101 Dunn ,Annabelle    Administration Assistant          [September 17th of 2016 ]    
+
+
+Employee Number   Total Sale         
+                 0   $18,245,463.50    
+                54    $1,884,295.40    
+                55    $3,525,462.19    
+                56    $2,754,951.05    
+                57    $3,522,704.53    
+                59    $3,900,172.99    
+                60    $3,233,737.31    
+                61    $3,252,131.23    
+                62    $8,081,332.30    
+                64    $4,341,842.14    
+
+
+10 rows selected. 
+
+Customer Id   Name                                Total orders   
+            38 Kraft Heinz                                        0 
+            37 Huntsman                                           0 
+            35 Kimberly-Clark                                     0 
+            40 Fluor                                              0 
+            39 Lear                                               0 
+            36 Hartford Financial Services Group                  0 
+            41 AECOM                                              1 
+            43 Facebook                                           1 
+            42 Becton Dickinson                                   1 
+            45 CenturyLink                                        5 
+            44 Jabil Circuit                                      5 
+
+
+11 rows selected. 
+
+Customer Id   Name            Order Id   Order Date    Total Items   Total Amount       
+            44 Jabil Circuit             92 28-OCT-2015               790    $1,050,939.97    
+            44 Jabil Circuit             69 17-MAR-2017               581      $755,093.92    
+            44 Jabil Circuit             10 24-JAN-2017               883      $620,962.99    
+            44 Jabil Circuit             29 14-AUG-2017               831      $508,588.59    
+            44 Jabil Circuit             82 03-DEC-2016               687      $398,636.25    
+
+
+Customer Id   Name                  Total Number of ORrers   Total Items   Total Amount       
+            47 General Mills                                 33           3116    $3,725,138.14    
+             8 International Paper                           35           3281    $2,642,238.04    
+            49 NextEra Energy                                37           3351    $2,452,508.95    
+             9 Emerson Electric                              37           3301    $2,893,564.97    
+            44 Jabil Circuit                                 45           3772    $3,334,221.72    
+
+
+Warehouse ID   Warehouse Name        Category ID   Category Name   Lowest Cost        
+              1 Southlake, Texas                    2 Video Card                $535.03    
+              2 San Francisco                       2 Video Card                $521.03    
+              2 San Francisco                       5 Storage                    $12.63    
+              3 New Jersey                          2 Video Card                $535.03    
+              4 Seattle, Washington                 2 Video Card                $535.03    
+              5 Toronto                             2 Video Card                $521.03    
+              5 Toronto                             5 Storage                    $12.63    
+              6 Sydney                              2 Video Card                $521.03    
+              6 Sydney                              5 Storage                    $12.63    
+              7 Mexico City                         2 Video Card                $535.03    
+              7 Mexico City                         5 Storage                    $12.63    
+              8 Beijing                             2 Video Card                $535.03    
+              8 Beijing                             5 Storage                    $12.63    
+              9 Bombay                              2 Video Card                $535.03    
+
+
+
+14 rows selected. 
+
+Month       Number of Orders   
+January                        5 
+February                      16 
+March                          4 
+April                          5 
+May                            9 
+June                          11 
+July                           1 
+August                        10 
+September                     14 
+October                       14 
+November                       6 
+December                      10 
+
+
+12 rows selected. 
+
+Product Id   Product name            Price              
+           50 Intel SSDPECME040T401           $8,867.99    
+          133 PNY VCQP6000-PB                 $5,499.99    
+          206 PNY VCQM6000-24GB-PB            $4,139.00    
+
+
+Product Id   Product name                 Price              
+           50 Intel SSDPECME040T401                $8,867.99    
+           94 Western Digital WD2500AVVS              $15.55    
+
+
+Customer report                                                   
+Number of customers with no orders: 272                            
+Number of customers with total purchase amount below average: 5    
+Number of customers with total purchase amount over average: 42    
+Total number of customers: 319                                     
+
+
